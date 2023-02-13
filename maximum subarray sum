@@ -1,0 +1,22 @@
+
+class patterns {
+    public static void main(String[] args) {
+        int a[] = { 1, 4, 5, -1, -8, 1 };
+        System.out.println(maxsubsum(a));
+    }
+
+    public static int maxsubsum(int a[]) {
+        int max = Integer.MIN_VALUE;
+        int cur = 0;
+        for (int i = 0; i < a.length; i++) {
+            cur = cur + a[i];
+            if (cur > max) {
+                max = cur;
+            }
+            if (cur < 0) {
+                cur = 0;
+            }
+        }
+        return max;
+    }
+}
